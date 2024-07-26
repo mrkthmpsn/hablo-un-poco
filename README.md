@@ -19,6 +19,7 @@ This project is an attempt to set up and encourage speaking practice sessions, w
 ### Chores
 - [X] Finish Google Translate API instructions
 - [ ] Write tests for the Google Translate API translation util
+- [ ] Demo
 - [ ] Containerise
 - [ ] Complete the session state maintenance when moving between pages 
   - (Only did the pre-session components as the ones most likely to be interrupted by a page change)
@@ -29,6 +30,7 @@ This project is an attempt to set up and encourage speaking practice sessions, w
   - [ ] And let the data view be filterable by the languages
 - [ ] Add notes for each session to the data saved
   - [ ] This could take the form of words that have been translated
+- [ ] 'Game-ify' features
 
 ## Running locally
 
