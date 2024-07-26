@@ -16,7 +16,7 @@ from app_components.reusable import translation_area
 from app_components.session_timer import session_timer_area
 from alt_pages.settings_page import category_creation
 
-st.header("DuoHablo")
+st.header("hablo un poco")
 
 # TODO[*] Language selection could happen here
 st.subheader("actually practice some Spanish")
@@ -27,7 +27,7 @@ app_setup()
 
 # Set-up
 with st.sidebar:
-    badge(type="github", name="mrkthmpsn")
+    badge(type="github", name="mrkthmpsn/hablo-un-poco")
     badge(type="twitter", name="tweetsbymarkt")
 
 

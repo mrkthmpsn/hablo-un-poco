@@ -1,8 +1,7 @@
-# DuoHablo
-_Any resemblance of the name to green owls is wholly intentional and will be changed for legal reasons if this ever gets large enough to need it_
+# hablo-un-poco
 
 ## Raison d'être
-After a while plugging away at Duolingo, wanted something more than mini-games. 
+After a while plugging away at Duolingo, I wanted something more than mini-games. 
 
 This project is an attempt to set up and encourage speaking practice sessions, with data monitoring and a hook-up to the Google Translate API to leave or review tricky words before and after the session.
 
@@ -46,7 +45,6 @@ Create `user_data.csv` and `user_categories.csv` files in the `data` folder, fol
 ### Everything else
 Run `pytest .` to check that everything is working (and that, if anything breaks, it's not you who did it).
 
----
 ---
 
 ## Useful Streamlit links and notes
