@@ -5,6 +5,9 @@ After a while plugging away at Duolingo, I wanted something more than mini-games
 
 This project is an attempt to set up and encourage speaking practice sessions, with data monitoring and a hook-up to the Google Translate API to leave or review tricky words before and after the session.
 
+## Demo
+https://youtu.be/pmHW0hU7DUg
+
 ## Technologies/practices used
 ✨ = new; 👨‍‍🏫 = learning; 🤝 = familiar
 - `streamlit` 🤝
@@ -19,7 +22,7 @@ This project is an attempt to set up and encourage speaking practice sessions, w
 ### Chores
 - [X] Finish Google Translate API instructions
 - [ ] Write tests for the Google Translate API translation util
-- [ ] Demo
+- [X] Demo
 - [ ] Containerise
 - [ ] Complete the session state maintenance when moving between pages 
   - (Only did the pre-session components as the ones most likely to be interrupted by a page change)
