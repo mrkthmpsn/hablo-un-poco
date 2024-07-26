@@ -17,7 +17,7 @@ This project is an attempt to set up and encourage speaking practice sessions, w
 
 ## 'Roadmap'
 ### Chores
-- [ ] Finish Google Translate API instructions
+- [X] Finish Google Translate API instructions
 - [ ] Write tests for the Google Translate API translation util
 - [ ] Containerise
 - [ ] Complete the session state maintenance when moving between pages 
@@ -33,8 +33,16 @@ This project is an attempt to set up and encourage speaking practice sessions, w
 ## Running locally
 
 ### Google Translate API
+[Written July 2024]
 Unfortunately, you need to deal with Google authentication - 'unfortunately' because Google's docs are labrynthine. 
-[More details coming].
+
+Log in to [Google Cloud](https://cloud.google.com/?hl=en) and create a new project. You will have to supply billing information, but if your account is new you'll get free credits which will more than cover the API costs (in development and use over the past month, my Google Translate costs are nearly 3p).
+
+Google authentication uses Application Default Credentials for local development. Follow ['Configure ADC with your Google Account' instructions](https://cloud.google.com/docs/authentication/provide-credentials-adc#google-idp). Grab the path of the `application_default_credentials.json` file as described in the ['User credentials provided by using Google CLI' section here](https://cloud.google.com/docs/authentication/application-default-credentials#personal) and add it to your `.env` file.
+
+Using the file path isn't strictly necessary for local development, but I didn't like the 'magic' of the Google client finding the file in my directory undocumented. 
+
+Please get in touch if you have problems with this or can improve on the documentation of this process.
 
 ### Set-up files
 Create an `.env` file in the root directory, following the template in `.env.example`

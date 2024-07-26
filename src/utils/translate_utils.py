@@ -2,18 +2,30 @@
 File for utils relating to using the Google Translate API
 """
 
+import base64
+import json
 import os
 
 from dotenv import load_dotenv
 from google.cloud import translate
+from google.oauth2.credentials import Credentials
 
 load_dotenv()
+
+encoded_key = str(os.getenv("ENCODED_GOOGLE_APP_CREDENTIALS"))[2:-1]
+
+# decode
+original_service_key = json.loads(base64.b64decode(encoded_key).decode("utf-8"))
 
 
 # The ADC is somewhere locally now and I'm going to have to re-do the authentication process to push to streamlit which
 # is going to be a nightmare because Google docs are so damn confusing
 def print_supported_languages(display_language_code: str):
-    client = translate.TranslationServiceClient()
+    client = translate.TranslationServiceClient(
+        credentials=Credentials.from_authorized_user_file(
+            os.getenv("GOOGLE_APP_CREDENTIALS_PATH")
+        )
+    )
 
     response = client.get_supported_languages(
         parent=os.getenv("GOOGLE_PROJECT_PARENT"),
@@ -29,7 +41,12 @@ def print_supported_languages(display_language_code: str):
 
 
 def translate_text(text: str, target_language_code: str) -> translate.Translation:
-    client = translate.TranslationServiceClient()
+
+    client = translate.TranslationServiceClient(
+        credentials=Credentials.from_authorized_user_file(
+            os.getenv("GOOGLE_APP_CREDENTIALS_PATH")
+        )
+    )
 
     response = client.translate_text(
         parent=os.getenv("GOOGLE_PROJECT_PARENT"),
