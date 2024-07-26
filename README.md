@@ -15,7 +15,8 @@ before or after the session.
 - `pytest` for general testing 👨‍‍🏫
 - Google Translate API/SDK ✨
 - Test-driven development as a general approach ✨
-  - _mostly_ adhered to
+  - (_mostly_ adhered to)
+- `bump2version` for version management ✨
 
 ## 'Roadmap'
 ### Chores
