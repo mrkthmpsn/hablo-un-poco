@@ -12,11 +12,6 @@ from google.oauth2.credentials import Credentials
 
 load_dotenv()
 
-encoded_key = str(os.getenv("ENCODED_GOOGLE_APP_CREDENTIALS"))[2:-1]
-
-# decode
-original_service_key = json.loads(base64.b64decode(encoded_key).decode("utf-8"))
-
 
 # The ADC is somewhere locally now and I'm going to have to re-do the authentication process to push to streamlit which
 # is going to be a nightmare because Google docs are so damn confusing
