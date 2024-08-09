@@ -29,6 +29,7 @@ def translation_area(area_type: str):
     translation_requests = st.text_area(
         f"{message_string} - translated using Google Translate's API"
     )
+    translation_requests = translation_requests.strip()
     if (
         translation_requests
         != st.session_state[f"{area_type}_session_translation_area_string"]

@@ -6,7 +6,8 @@ Test cases:
 - [X] Rendering the output properly
 - [X] Text splits by line-breaks into a list
 - [X] Only translate once
-- [ ] Deals with the appropriate type of session state
+- [X] Deals with the appropriate type of session state
+- [X] Ignores/strips empty lines
 - Dealing with emojis?
 """
 
@@ -159,4 +160,33 @@ def test_translation_area_appropriate_session_state():
     )
     assert hasattr(
         translation_area_component.session_state, "post_session_translation_list"
+    )
+
+
+@patch("utils.translate_utils.translate_text")
+def test_translation_area_ignore_empty_line(
+    mock_translate_text, translation_area_component
+):
+    # Run to initialise the slider
+    translation_area_component.run()
+
+    translation_area_component.text_area[0].set_value("dog\n ")
+
+    mock_translation = MagicMock(spec=translate.Translation)
+    mock_translation.translated_text = "perro"
+    mock_translate_text.return_value = mock_translation
+
+    # Run to enact the change to text area value
+    translation_area_component.run()
+
+    assert (
+        len(translation_area_component.session_state.pre_session_translation_list) == 1
+    )
+    assert (
+        translation_area_component.session_state.pre_session_translation_area_string
+        == "dog"
+    )
+    assert (
+        translation_area_component.session_state.pre_session_translation_list[0]
+        == "dog - perro"
     )
